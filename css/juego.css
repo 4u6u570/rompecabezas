@@ -47,7 +47,14 @@ li::before {
 .texto-centrado {
   text-align: center;
 }
-
+#juego{
+  text-align: center;
+  animation: fadein 1s;
+  background-color: #E84A5F;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
 #juego div {
   display: flex;
   float: left;
@@ -66,6 +73,7 @@ li::before {
     height: 100%;
     box-sizing: border-box;
     padding: 0.2%;
+   
  }
  
 #objetivo img{
