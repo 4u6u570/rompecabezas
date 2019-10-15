@@ -18,8 +18,6 @@ function jugarDeNuevo() {
           mezclarPiezas(1)
         }
       },
-
-
     ]
   })
 }
@@ -307,7 +305,7 @@ y ejecutando la función para que se capturen las teclas que
 presiona el usuario */
 function iniciar() {
   mostrarInstrucciones(instrucciones);
-  mezclarPiezas(1);
+  mezclarPiezas(30);
   capturarTeclas();
 }
 
