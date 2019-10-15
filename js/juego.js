@@ -2,29 +2,27 @@
 /////////ALERTAS//////////////////////////
 ///////////////////////////////////////////
 
-  function jugarDeNuevo(){
-    notie.select({
-      text: '¿Jugar de nuevo?',
-      cancelText: 'Cerrar',
-  
-      choices: [
-        {
-          text: 'Aceptar',
-          handler: function () {
-            mezclarPiezas(1) }
-          },
-        {
-          type: 2,
-          text: 'Compartir',
-          handler: function () {
-            notie.alert({ type: 2, text: '¡Compartido!' })
-          }
-        },
-        
-        
-      ]
-    })
-  }
+function alertaGanaste() {
+  notie.alert({ type: 1, text: '¡GANASTE!', time: 2});
+}
+
+function jugarDeNuevo() {
+  notie.select({
+    text: '¿Jugar de nuevo?',
+    cancelText: 'Cerrar',
+
+    choices: [
+      {
+        text: 'Aceptar',
+        handler: function () {
+          mezclarPiezas(1)
+        }
+      },
+
+
+    ]
+  })
+}
 
 
 // Arreglo que contiene las intrucciones del juego 
@@ -50,9 +48,9 @@ Cada elemento de este arreglo deberá ser mostrado en la lista con id 'lista-ins
 Para eso deberás usar la función ya implementada mostrarInstruccionEnLista().
 Podés ver su implementación en la ultima parte de este codigo. */
 function mostrarInstrucciones(instrucciones) {
- /* for (let i = 0; i < instrucciones.lenght; i++) {
-    mostrarInstruccionEnLista(instrucciones[i], 'lista-instrucciones')
-  }*/
+  /* for (let i = 0; i < instrucciones.lenght; i++) {
+     mostrarInstruccionEnLista(instrucciones[i], 'lista-instrucciones')
+   }*/
   for (let i = 0; i < instrucciones.length; i++) {
     mostrarInstruccionEnLista(instrucciones[i], 'lista-instrucciones')
   }
@@ -89,16 +87,13 @@ function chequearSiGano() {
 
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
+
+
 function mostrarCartelGanador() {
-  
 
-  notie.alert({ type: 1, text: '¡GANASTE!'});
-
-}
-
-
-
-
+  alertaGanaste();
+  setTimeout( () => jugarDeNuevo(), 2500);
+  }
 
 //mostrarCartelGanador(function2);
 
@@ -312,7 +307,7 @@ y ejecutando la función para que se capturen las teclas que
 presiona el usuario */
 function iniciar() {
   mostrarInstrucciones(instrucciones);
-  mezclarPiezas(30);
+  mezclarPiezas(1);
   capturarTeclas();
 }
 
