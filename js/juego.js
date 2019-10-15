@@ -1,3 +1,32 @@
+//////////////////////////////////////////
+/////////ALERTAS//////////////////////////
+///////////////////////////////////////////
+
+  function jugarDeNuevo(){
+    notie.select({
+      text: '¿Jugar de nuevo?',
+      cancelText: 'Cerrar',
+  
+      choices: [
+        {
+          text: 'Aceptar',
+          handler: function () {
+            mezclarPiezas(1) }
+          },
+        {
+          type: 2,
+          text: 'Compartir',
+          handler: function () {
+            notie.alert({ type: 2, text: '¡Compartido!' })
+          }
+        },
+        
+        
+      ]
+    })
+  }
+
+
 // Arreglo que contiene las intrucciones del juego 
 var instrucciones = ["Utilizar las flechas para mover las piezas", "Ordenar las piezas hasta alcanzar la imagen objetivo"];
 // Arreglo para ir guardando los movimientos que se vayan realizando
@@ -57,10 +86,21 @@ function chequearSiGano() {
   return true;
 }
 
+
+
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-  alert("¡GANASTE!");
+  
+
+  notie.alert({ type: 1, text: '¡GANASTE!'});
+
 }
+
+
+
+
+
+//mostrarCartelGanador(function2);
 
 /* Función que intercambia dos posiciones en la grilla.
 Pensar como intercambiar dos posiciones en un arreglo de arreglos. 
@@ -135,6 +175,7 @@ function moverEnDireccion(direccion) {
 
   }
 }
+
 
 
 //////////////////////////////////////////////////////////
@@ -245,6 +286,7 @@ permite detectar eventos, por ejemplo, cuando una tecla es presionada y en
 base a eso hacer algo. No es necesario que entiendas como funciona esto ahora, 
 en el futuro ya lo vas a aprender. Por ahora, sólo hay que entender que cuando
 se toca una tecla se hace algo en respuesta, en este caso, un movimiento */
+
 function capturarTeclas() {
   document.body.onkeydown = (function (evento) {
     if (evento.which === codigosDireccion.ABAJO ||
