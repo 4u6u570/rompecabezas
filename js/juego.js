@@ -1,6 +1,6 @@
 //////////////////////////////////////////
-/////////ALERTAS//////////////////////////
-///////////////////////////////////////////
+/////////ALERTAS NOTIE////////////////////
+//////////////////////////////////////////
 
 function alertaGanaste() {
   notie.alert({ type: 1, text: '¡GANASTE!', time: 2});
@@ -21,7 +21,6 @@ function jugarDeNuevo() {
     ]
   })
 }
-
 
 // Arreglo que contiene las intrucciones del juego 
 var instrucciones = ["Utilizar las flechas para mover las piezas", "Ordenar las piezas hasta alcanzar la imagen objetivo"];
@@ -61,8 +60,6 @@ function guardarMovimiento(direccion) {
   actualizarUltimoMovimiento(direccion);
 }
 
-
-
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora. 
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
 function chequearSiGano() {
@@ -82,10 +79,7 @@ function chequearSiGano() {
   return true;
 }
 
-
-
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
-
 
 function mostrarCartelGanador() {
 
@@ -116,7 +110,6 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
   filaVacia = nuevaFila;
   columnaVacia = nuevaColumna;
 }
-
 
 // Para chequear si la posicón está dentro de la grilla.
 function posicionValida(fila, columna) {
@@ -168,8 +161,6 @@ function moverEnDireccion(direccion) {
 
   }
 }
-
-
 
 //////////////////////////////////////////////////////////
 ////////A CONTINUACIÓN FUNCIONES YA IMPLEMENTADAS.////////
