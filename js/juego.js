@@ -15,7 +15,7 @@ function jugarDeNuevo() {
       {
         text: 'Aceptar',
         handler: function () {
-          mezclarPiezas(1)
+          mezclarPiezas(30)
         }
       },
     ]
